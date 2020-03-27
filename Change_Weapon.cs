@@ -8,8 +8,8 @@ public class Change_Weapon : MonoBehaviour
     public GameObject Handgun_01_FPSController;
     void Update()
     {
-        int cw = 1;
-        if (Input.GetKey("C"))
+        int cw = 0;
+        if (Input.GetKeyDown("c"))
         {
             cw += 1;
         }
@@ -18,12 +18,12 @@ public class Change_Weapon : MonoBehaviour
             Assault_Rifle_01_FPSController.SetActive(true);
             Handgun_01_FPSController.SetActive(false);
         }
-        if (cw == 2)
+        else if (cw == 2)
         {
             Assault_Rifle_01_FPSController.SetActive(false);
             Handgun_01_FPSController.SetActive(true);
         }
-        if (cw == 3)
+        else
         {
             cw = 1;
         }
