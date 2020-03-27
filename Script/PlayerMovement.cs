@@ -30,4 +30,12 @@ public class PlayerMovement : MonoBehaviour
         Movement = Movement.normalized * SpeedMovement * Time.deltaTime;
         PlayerRGB.MovePosition (transform.position + Movement);
     }
+
+    void walkanimation (float h, float v)
+    {
+        if (h != 0 || v != 0)
+        {
+            Animator.SetBool("param_idletowalk", true);
+        }
+    }
 }
