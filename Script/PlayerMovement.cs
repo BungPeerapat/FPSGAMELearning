@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     Animator Animator;
     int floodMask;
     float camRayLenght = 100f;
+    //Mouse
+    public float sensitivityY = 5F;
+    //Mouse
     void Start()
     {
         PlayerRGB = GetComponent<Rigidbody>();
@@ -35,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void LockMouseFPS (float rh)
     {
-        transform.Rotate(rh, 0.0f, 0.0f);
+        transform.Rotate(0.0f, rh * sensitivityY * Time.deltaTime, 0.0f);
     }
 
     void walkanimation (float h, float v)
