@@ -11,25 +11,22 @@ public class PlayerMovement : MonoBehaviour
     int floodMask;
     float camRayLenght = 100f;
 
-    // Start is called before the first frame update
     void Start()
     {
         PlayerRGB = GetComponent<Rigidbody>();
         Animation = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        float H = Input.GetAxis("Herizontal"); //แนวนอน ซ้าย ขวา
-        float V = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
-        Move(H,V);
+        float h = Input.GetAxis("Herizontal"); //แนวนอน ซ้าย ขวา
+        float v = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
+        Move(h,v);
     }
-    void Move (float H, float V)
+    void Move (float h, float v)
     {
-        Movement.Set(H, 0, V);
+        Movement.Set(h, 0, v);
         Movement = Movement.normalized * SpeedMovement * Time.deltaTime;
         PlayerRGB.MovePosition (transform.position + Movement);
-
     }
 }
