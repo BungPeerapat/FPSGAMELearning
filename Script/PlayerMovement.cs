@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         Animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal"); //แนวนอน ซ้าย ขวา
         float v = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         Movement.Set(h, 0, v);
         Movement = Movement.normalized * SpeedMovement * Time.deltaTime;
         PlayerRGB.MovePosition (transform.position + Movement);
+        walkanimation(h, v);
     }
 
     void walkanimation (float h, float v)
