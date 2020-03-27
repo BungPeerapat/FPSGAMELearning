@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         Animation = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         float h = Input.GetAxis("Herizontal"); //แนวนอน ซ้าย ขวา
         float v = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
