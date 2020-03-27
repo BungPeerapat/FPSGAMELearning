@@ -11,19 +11,6 @@ public class PlayerMovement : MonoBehaviour
     Animator Animator;
     int floodMask;
     float camRayLenght = 100f;
-
-    //=========Mouse=====================
-    public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
-    public RotationAxes axes = RotationAxes.MouseXAndY;
-    public float sensitivityX = 15F;
-    public float sensitivityY = 15F;
-    public float minimumX = -360F;
-    public float maximumX = 360F;
-    public float minimumY = -60F;
-    public float maximumY = 60F;
-    float rotationY = 0F;
-
-   //============Mouse==================
     void Start()
     {
         PlayerRGB = GetComponent<Rigidbody>();
@@ -37,23 +24,7 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
         Move(h,v);
         float rh = Input.GetAxis("Mouse X");
-        float rv = Input.GetAxis("Mouse Y");
-        //================Mouse======
-        if (axes == RotationAxes.MouseXAndY)
-        {
-            float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
-
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
-
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-        }
-        else if (axes == RotationAxes.MouseX)
-        {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-        }
-        //==========Mouse==========
-
+        LockMouseFPS(rh);
     }
     void Move (float h, float v)
     {
@@ -61,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
         Movement = Movement.normalized * SpeedMovement * Time.deltaTime;
         PlayerRGB.MovePosition (transform.position + Movement);
         walkanimation(h, v);
+    }
+    void LockMouseFPS (float rh)
+    {
+        transform.Rotate(rh, 0.0f, 0.0f);
     }
 
     void walkanimation (float h, float v)
