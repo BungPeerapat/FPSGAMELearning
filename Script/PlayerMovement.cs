@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController cotroller;
     Rigidbody PlayerRGB;
     Vector3 Movement;
-    public float SpeedMovement = 1f;
+    public float SpeedMovement = 0.1f;
     Animator Animator;
     int floodMask;
     float camRayLenght = 100f;
@@ -37,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         if (h != 0 || v != 0)
         {
             Animator.SetBool("param_idletowalk", true);
+            if (SpeedMovement <= 5)
+            {
+                SpeedMovement = SpeedMovement + 1;
+                
+            }
         }
         else
             Animator.SetBool("param_idletowalk", false);
