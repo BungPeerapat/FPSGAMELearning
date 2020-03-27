@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public CharacterController cotroller;
     Rigidbody PlayerRGB;
     Vector3 Movement;
-    public float SpeedMovement = 6;
-    Animator Animation;
+    public float SpeedMovement = 6f;
+    Animator Animator;
     int floodMask;
     float camRayLenght = 100f;
 
     void Start()
     {
         PlayerRGB = GetComponent<Rigidbody>();
-        Animation = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        float h = Input.GetAxis("Herizontal"); //แนวนอน ซ้าย ขวา
+        float h = Input.GetAxis("Horizontal"); //แนวนอน ซ้าย ขวา
         float v = Input.GetAxis("Vertical"); //แนวตั้ง ชึ้น ลง
         Move(h,v);
     }
