@@ -6,18 +6,26 @@ public class Change_Weapon : MonoBehaviour
 {
     public GameObject Assault_Rifle_01_FPSController;
     public GameObject Handgun_01_FPSController;
-    public bool ChangeWeapon;
     void Update()
     {
-        if (ChangeWeapon == true)
+        int cw = 1;
+        if (Input.GetKey("C"))
+        {
+            cw += 1;
+        }
+        if (cw == 1)
         {
             Assault_Rifle_01_FPSController.SetActive(true);
             Handgun_01_FPSController.SetActive(false);
         }
-        else
+        if (cw == 2)
         {
-            Handgun_01_FPSController.SetActive(true);
             Assault_Rifle_01_FPSController.SetActive(false);
+            Handgun_01_FPSController.SetActive(true);
+        }
+        if (cw == 3)
+        {
+            cw = 1;
         }
     }
 }
