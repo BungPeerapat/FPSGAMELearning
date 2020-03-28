@@ -17,13 +17,17 @@ public class CountDownforStartgame : MonoBehaviour
         while(CountDownnumber <= CountDownmax)
         {
             CountDownShowText.text = CountDownnumber.ToString();
+
+            yield return new WaitForSeconds(1F);
+
             CountDownnumber += 1;
         }
 
         CountDownShowText.text = "Let Start!";
-        yield return new WaitForSeconds(2f);
-        CountDownShowText.gameObject.SetActive(false);
 
+        yield return new WaitForSeconds(2f);
+
+        CountDownShowText.gameObject.SetActive(false);
 
     }
 }
