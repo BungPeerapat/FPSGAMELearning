@@ -14,13 +14,13 @@ public class CountDownforStartgame : MonoBehaviour
     }
     IEnumerator StartCountdown()
     {
-        while(CountDownnumber >= CountDownmax)
+        if(CountDownnumber <= CountDownmax)
         {
+            CountDownnumber += 1;
+
             CountDownShowText.text = CountDownnumber.ToString();
 
             yield return new WaitForSeconds(1F);
-
-            CountDownnumber += 1;
         }
 
         CountDownShowText.text = "Let Start!";
