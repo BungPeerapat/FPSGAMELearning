@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CountDownforStartgame : MonoBehaviour
 {
 
-    public Text Test = null;
+    public Text TestText = null;
     void Start() {
-        Test.text = "Zombie 123.";
+        TestText.text = "Zombie 123.";
     }
 }
