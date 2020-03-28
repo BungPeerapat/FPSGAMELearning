@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class CountDownforStartgame : MonoBehaviour
 {
-    public int CountDownnumber;
+    public int CountDownnumber = 0;
+    public int CountDownmax;
     public Text CountDownShowText;
     private void Start()
     {
-        StartCoroutine()
+
     }
     void FixedUpdate()
     {
-        while(CountDownnumber >= 3)
+        while(CountDownnumber <= CountDownmax)
         {
             CountDownShowText.text = CountDownnumber.ToString();
             CountDownnumber += 1;
         }
 
         CountDownShowText.text = "Let Start!";
-        CountDown_Text.ga
+        
     }
 }
