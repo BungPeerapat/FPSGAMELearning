@@ -8,15 +8,14 @@ public class CountDownforStartgame : MonoBehaviour
     public int CountDownnumber = 0;
     public int CountDownmax;
     public Text TextCountDown;
-    private void Start()
+    public void Start()
     {
         StartCoroutine(StartCountdown());
     }
     IEnumerator StartCountdown()
     {
-        if(CountDownnumber <= CountDownmax)
+        for(int CountDownnumber = 0; CountDownnumber <= CountDownmax; CountDownnumber++)
         {
-            CountDownnumber += 1;
 
             TextCountDown.text = CountDownnumber.ToString();
 
