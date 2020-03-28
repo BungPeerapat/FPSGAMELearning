@@ -18,7 +18,6 @@ public class Change_Weapon : MonoBehaviour
                 Tranpositionweapon();
                 Assault_Rifle_01_FPSController.SetActive(true);
                 Handgun_01_FPSController.SetActive(false);
-                Tranpositionweapon();
             }
             if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
