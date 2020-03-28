@@ -7,7 +7,7 @@ public class CountDownforStartgame : MonoBehaviour
 {
     public int CountDownnumber = 0;
     public int CountDownmax;
-    public Text CountDownShowText;
+    public Text TextCountDown;
     private void Start()
     {
         StartCoroutine(StartCountdown());
@@ -18,16 +18,16 @@ public class CountDownforStartgame : MonoBehaviour
         {
             CountDownnumber += 1;
 
-            CountDownShowText.text = CountDownnumber.ToString();
+            TextCountDown.text = CountDownnumber.ToString();
 
             yield return new WaitForSeconds(1F);
         }
 
-        CountDownShowText.text = "Let Start!";
+        TextCountDown.text = "Let Start!";
 
         yield return new WaitForSeconds(2f);
 
-        CountDownShowText.gameObject.SetActive(false);
+        TextCountDown.gameObject.SetActive(false);
 
     }
 }
