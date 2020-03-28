@@ -10,9 +10,9 @@ public class CountDownforStartgame : MonoBehaviour
     public Text CountDownShowText;
     private void Start()
     {
-
+        StartCoroutine(StartCountdown());
     }
-    IEnumerator FixedUpdate()
+    IEnumerator StartCountdown()
     {
         while(CountDownnumber <= CountDownmax)
         {
@@ -21,8 +21,8 @@ public class CountDownforStartgame : MonoBehaviour
         }
 
         CountDownShowText.text = "Let Start!";
-        yield return new WaitForSeconds(4f);
-
+        yield return new WaitForSeconds(2f);
+        CountDownShowText.gameObject.SetActive(false);
 
 
     }
