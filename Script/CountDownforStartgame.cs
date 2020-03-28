@@ -12,7 +12,7 @@ public class CountDownforStartgame : MonoBehaviour
     {
 
     }
-    void FixedUpdate()
+    IEnumerator FixedUpdate()
     {
         while(CountDownnumber <= CountDownmax)
         {
@@ -21,6 +21,9 @@ public class CountDownforStartgame : MonoBehaviour
         }
 
         CountDownShowText.text = "Let Start!";
-        
+        yield return new WaitForSeconds(4f);
+
+
+
     }
 }
