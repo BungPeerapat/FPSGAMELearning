@@ -7,7 +7,10 @@ public class CountDownforStartgame : MonoBehaviour
 {
     public int CountDownnumber;
     public Text CountDownShowText;
-    // Update is called once per frame
+    private void Start()
+    {
+        StartCoroutine()
+    }
     void FixedUpdate()
     {
         while(CountDownnumber >= 3)
@@ -17,5 +20,6 @@ public class CountDownforStartgame : MonoBehaviour
         }
 
         CountDownShowText.text = "Let Start!";
+        CountDown_Text.ga
     }
 }
