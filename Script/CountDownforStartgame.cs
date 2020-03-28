@@ -5,30 +5,9 @@ using UnityEngine.UI;
 
 public class CountDownforStartgame : MonoBehaviour
 {
-    public int CountDownnumber = 0;
-    public int CountDownmax;
-    public Text TextCountDown = null;
-    public void Start()
-    {
-        StartCoroutine(StartCountdown());
-    }
-    IEnumerator StartCountdown()
-    {
-        while(CountDownnumber > CountDownmax)
-        {
 
-            TextCountDown.text = CountDownnumber.ToString();
-
-            yield return new WaitForSeconds(1F);
-
-            CountDownnumber++;
-        }
-
-        TextCountDown.text = "Let Start!";
-
-        yield return new WaitForSeconds(2f);
-
-        TextCountDown.gameObject.SetActive(false);
-
+    public Text Test = null;
+    void Start() {
+        Test.text = "Zombie 123.";
     }
 }
