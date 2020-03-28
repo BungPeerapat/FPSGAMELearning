@@ -12574,7 +12574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56ac14cb72efeb4b92cf5cb025a97c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunCamera: {fileID: 20338765399721042}
+  gunCamera: {fileID: 0}
   fovSpeed: 15
   defaultFov: 40
   aimFov: 16
