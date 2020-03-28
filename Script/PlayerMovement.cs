@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
             if (SpeedMovement <= 5)
             {
                 SpeedMovement = SpeedMovement + 1;
-                
             }
         }
         else
