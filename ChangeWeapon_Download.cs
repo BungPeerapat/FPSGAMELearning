@@ -11,6 +11,8 @@ public class ChangeWeapon_Download : MonoBehaviour
      private int nrWeapons;
      public GameObject arms_assault_rifle_01;
      public GameObject arms_handgun_01;
+    public GameObject Player_Canvas_Handgun;
+    public GameObject Player_Canvas_AK;
 
     void Start() {
          
@@ -37,8 +39,10 @@ public class ChangeWeapon_Download : MonoBehaviour
          for (int i=0; i < nrWeapons; i++)    {
              if (i == index) {
                 arms_assault_rifle_01.gameObject.SetActive(true);
-             } else {
+                Player_Canvas_AK.SetActive(true);
+            } else {
                 arms_handgun_01.gameObject.SetActive(false);
+                Player_Canvas_Handgun.SetActive(false);
              }
          }
      }
