@@ -7,7 +7,7 @@ public class CountDownforStartgame : MonoBehaviour
 {
     public int CountDownnumber = 0;
     public int CountDownmax;
-    public Text TextCountDown;
+    public Text TextCountDown = null;
     public void Start()
     {
         StartCoroutine(StartCountdown());
