@@ -14,7 +14,7 @@ public class CountDownforStartgame : MonoBehaviour
     }
     IEnumerator StartCountdown()
     {
-        while(CountDownnumber <= CountDownmax)
+        while(CountDownnumber >= CountDownmax)
         {
             CountDownShowText.text = CountDownnumber.ToString();
 
